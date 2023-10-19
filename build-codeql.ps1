@@ -1,6 +1,8 @@
 #! /usr/bin/pwsh
 
-Remove-Item -Path .\build -Recurse -Force
+if (Test-Path -Path .\build) {
+    Remove-Item -Path .\build -Recurse -Force
+}
 
 New-Item -Path .\build -ItemType Directory
 
